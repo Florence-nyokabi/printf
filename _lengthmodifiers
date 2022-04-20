@@ -1,0 +1,52 @@
+#include "main.h"
+/**
+ * handle_length - length modifier
+ * @modifier: A pointer to  length modifier.
+ * @index: An index counter for the original format string.
+ *
+ * Return 0
+ */
+
+unsigned char handle_length(const char *modifier, char *index)
+{
+	if (*modifier == 'l')
+	{
+		(*index)++;
+		return (LONG);
+	}
+	
+	else if (*modifier == 'h')
+	{
+		(*index)++;
+		return (SHORT);
+	}
+
+	return (0);
+}
+
+/**
+ * handle_specifier - match conversion specifier with functions
+ * 
+ */
+
+unsigned int (*handle_specifiers(const char *specifier))(va_list, buffer_t *,unsigned char, int, int, unsigned char)
+{
+	int i;
+	converter_t converters[] = {
+	{'d', convert_d},
+	{'i', convert_i},
+	{'u', convert_u},
+	{'o', convert_o},
+	{'x', convert_x},
+	{'X', convert_X},
+	{0, NULL}
+	};
+
+	for (i = 0; converters[i].func; i++)
+	{
+		if (converters[i].specifier == *specifier)
+			return (converters[i].func);
+	}
+	
+	return (NULL);
+}
