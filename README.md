@@ -32,5 +32,5 @@ int _printf(const char *format, ...);
 
 
 ### Authors
-* **Lynne Munini** - [muninilynne65@gmail.com](https://github.com/lynnemunini)
-* **Jumba Mark** - [jumbamark@yahoo.com](https://github.com/jumbamark)
+* **Stephen Muchendu** - [muchendumaina66@gmail.com](https://github.com/MuchenduOnIt)
+* **Florence Wangui** - [wanguif018@gmail.com](https://github.com/Florence-wangui)
